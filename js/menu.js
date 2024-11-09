@@ -1,5 +1,5 @@
 // Sélectionne tous les liens du menu
-const menuLinks = document.querySelectorAll('header nav a');
+const menuLinks = document.querySelectorAll('header nav a, h1 a');
 
 // Écouteur d'événements pour chaque lien
 menuLinks.forEach(link => {

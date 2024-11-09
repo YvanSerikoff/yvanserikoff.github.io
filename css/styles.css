@@ -1,6 +1,7 @@
 /* Style de base */
 html {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: white;
 }
 
 body {
@@ -113,6 +114,7 @@ main>section:nth-child(even){
     background-color: #ffffff71;
     width: 100%;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .carousel-track {
@@ -141,6 +143,51 @@ main>section:nth-child(even){
     display: block;
     margin: 0 auto;
     object-fit: contain; /* Gère l'adaptation de l'image à son conteneur */
+}
+.carousel-button{
+    top: auto;
+    background-color: #ffffff71;
+    border: none;
+    color: black;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1em;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    background-color: gray;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.carousel-indicators button.active {
+    background-color: black;
+    opacity: 1;
+}
+
+#soft_skills {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de taille égale */
+    grid-template-rows: repeat(2, auto);   /* 2 lignes de hauteur automatique */
+    gap: 10px; /* Espace entre les éléments */
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .timeline {
