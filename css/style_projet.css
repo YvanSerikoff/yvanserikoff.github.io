@@ -1,0 +1,76 @@
+/* Style de base */
+html {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: white;
+}
+
+body {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    background-image: url('../img/image.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    backdrop-filter: blur(20px);
+}
+
+header, footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #fff;
+    color: #353535;
+    flex-wrap: wrap; /* Permet d'enrouler les éléments pour les petits écrans */
+}
+
+header > nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+header > nav > ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+header > nav > ul > li {
+    margin: 0 10px;
+    font-size: larger;
+}
+
+a {
+    color: #353535;
+    text-decoration: none;
+}
+
+a:hover {
+    transition: 0.3s;
+    color: #15a846;
+}
+
+.spacer {
+    margin: 1.25em;
+}
+
+.sectionTitle {
+    text-align: left;
+    font-size: 2.5em;
+    margin: 1em 0;
+    margin-left: 0.5em;
+}
+
+/* Responsive - Tablettes */
+@media (max-width: 992px) {
+    #presentation > div {
+        margin: 0 5em; /* Réduit les marges pour un meilleur affichage */
+        flex-direction: column; /* Stacking elements vertically */
+        text-align: center;
+    }
+
+    #presentation p {
+        font-size: 1.2em;
+    }
+}
