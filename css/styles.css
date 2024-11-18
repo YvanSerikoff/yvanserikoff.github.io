@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    color: #2c2c2c; /* Blue text */
+    color: #2c2c2c;
     margin: 0;
     position: relative;
     background-color: #2c2c2c; /* Anthracite background */
@@ -23,14 +23,37 @@ img:hover {
     scale: 1.1;
 }
 
-header, footer {
+header{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px 0;
     background-color: #ffffff; /* Anthracite background */
-    color: #007bff; /* Blue text */
+    color: #000000; /* Blue text */
     flex-wrap: wrap; /* Permet d'enrouler les éléments pour les petits écrans */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ffffff; /* Anthracite background */
+    color: #000000; /* Blue text */
+    flex-wrap: wrap; /* Permet d'enrouler les éléments pour les petits écrans */
+    position: sticky;
+}
+
+header>h1>a{
+    color: #007bff;
+    transition: 0.3s;
+}
+
+header>h1>:hover{
+    font-size: 1.1em;
+    color: #6497ca;
 }
 
 header > nav {
@@ -49,40 +72,55 @@ header > nav > ul > li {
     font-size: larger;
 }
 
+#download-pdf {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#download-pdf:hover {
+    background-color: #0056b3;
+}
+
+
 a {
-    color: #007bff; /* Blue text */
     text-decoration: none;
+    color: #2c2c2c;
+    transition: 0.3s;
 }
 
 a:hover {
     transition: 0.3s;
-    color: darkblue;
+    color: #007bff;
 }
 
 .spacer {
     margin: 1.25em;
 }
 
-.sectionTitle:nth-of-type(odd) {
+main>section:nth-child(even)>.sectionTitle {
+    text-align: left;
+    font-size: 2.5em;
     color: #007bff; /* Blue text */
 }
 
-.sectionTitle:nth-of-type(even) {
-    color: #ffffff; /* White text */
-}
-
-.sectionTitle {
+main>section:nth-child(odd)>.sectionTitle {
     text-align: left;
     font-size: 2.5em;
-    margin: 1em 0;
-    margin-left: 0.5em;
+    margin: 1em 0 1em 0.5em;
+    color: #ffffff; /* Blue text */
 }
 
 main > section:nth-child(even) {
     background-color: #ffffff; /* White background */
     border-radius: 10px;
     padding: 1em;
-    margin: 1em;
+    margin: 2em;
 }
 
 #presentation > div {
@@ -104,7 +142,7 @@ main > section:nth-child(even) {
     padding: 1em;
     background-color: #ffffff; /* White background */
     border-radius: 10px;
-    color: #007bff; /* Blue text */
+    color: #040412; /* Blue text */
 }
 
 #presentation > div > img {
@@ -119,15 +157,17 @@ main > section:nth-child(even) {
     margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: center; /* Center the carousel */
     overflow: hidden;
     position: relative;
 }
 
 .carousel-track-container {
-    background-color: #ffffff; /* White background */
-    width: 100%;
+    border: 0.5em solid #2c2c2c; /* Set the border color and width */
+    width: 50%;
+    padding: 1em;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 1em;
     display: flex;
     align-items: center;
     position: relative;
@@ -137,6 +177,7 @@ main > section:nth-child(even) {
 
 .carousel-track {
     display: flex;
+    align-items: center; /* Center the items vertically */
     transition: transform 0.3s ease;
     list-style: none;
     padding: 0;
@@ -145,22 +186,29 @@ main > section:nth-child(even) {
 
 .carousel-item {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
     flex-direction: column;
     color: #007bff; /* Blue text */
     font-size: 3em;
-    align-items: center;
     min-width: 100%;
     text-align: center;
-    padding: 10px;
 }
 
 .carousel-item img {
     width: 25%; /* Fixe la largeur à 25% de la taille de l'élément parent */
-    height: 75%; /* Garde le ratio original de l'image */
+    height: 70%; /* Garde le ratio original de l'image */
     display: block;
     margin: 0 auto;
     object-fit: contain; /* Gère l'adaptation de l'image à son conteneur */
+}
+
+.carousel img:hover {
+    scale: none;
+}
+
+.carousel span{
+    margin: 0.2em;
 }
 
 .carousel-button {
@@ -212,7 +260,7 @@ main > section:nth-child(even) {
     color: white;
     width: 50%;
     max-width: 150px;
-    border-radius: 10%;
+    margin: 1em;
     transition: 0.3s;
 }
 
@@ -232,9 +280,7 @@ main > section:nth-child(even) {
 
 /* Styling for the section */
 #parcours-scolaire {
-    padding: 20px;
     font-family: Arial, sans-serif;
-    margin: 20px 0;
     color: #007bff; /* Blue text */
 }
 
@@ -273,7 +319,6 @@ main > section:nth-child(even) {
     padding-left: 0;
     padding-right: 7em;
 }
-
 /* Connecting dot */
 .timeline-item::before {
     content: '';
@@ -296,10 +341,10 @@ main > section:nth-child(even) {
     border: 1px solid #ddd;
     border-radius: 12px; /* Coins légèrement plus arrondis */
     padding: 20px 25px; /* Taille des boîtes augmentée */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légèrement accentuée */
     max-width: 350px; /* Largeur maximale augmentée */
     font-size: 16px; /* Taille de police agrandie */
     color: #007bff; /* Blue text */
+    transition: 0.3s;
 }
 
 /* Highlight title and dates */
@@ -312,6 +357,11 @@ main > section:nth-child(even) {
 .timeline-content span {
     font-size: 15px; /* Taille des dates légèrement augmentée */
     color: black;
+}
+
+.timeline-content:hover{
+    border-color: #007bff;
+    border-width: 0.5em;
 }
 
 .list {
@@ -370,42 +420,45 @@ main > section:nth-child(even) {
     font-family: Arial, sans-serif;
     margin: 20px 0;
     border-radius: 12px; /* Coins arrondis */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
     color: #007bff; /* Blue text */
 }
 
 /* Liste des loisirs */
-#loisirs ul {
-    list-style-type: none; /* Supprime les puces par défaut */
+.div-loisir{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     padding: 0;
     margin: 0 auto;
-    display: flex; /* Affichage en ligne */
-    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
-    justify-content: center;
-    gap: 15px; /* Espace entre les éléments */
+    gap: 3em; /* Espace entre les éléments */
 }
 
 /* Éléments de la liste */
-#loisirs ul li {
+.div-loisir>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #ffffff; /* White background */
     border: 1px solid #ddd; /* Bordure légère */
     border-radius: 8px; /* Coins arrondis */
     padding: 1em 2em;
-    font-size: 18px; /* Taille de police */
+    font-size:2em ;
     color: #007bff; /* Blue text */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    transition: transform 0.2s, box-shadow 0.2s; /* Animation au survol */
+    transition: transform 0.2s;
 }
 
-/* Animation au survol */
-#loisirs ul li:hover {
+.div-loisir>div:hover {
     transform: translateY(-5px); /* Légère élévation */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre accentuée */
 }
 
-/* Espacement */
-.spacer {
-    height: 20px;
+.div-loisir img {
+    width: 50%; /* Taille de l'image */
+    margin-bottom: 2em; /* Espace sous l'image */
+}
+
+.div-loisir img:hover {
+    scale: 1.0;
 }
 
 .icons {
@@ -429,7 +482,7 @@ main > section:nth-child(even) {
 .icons img {
     width: 6em; /* Augmente la largeur des images */
     height: 6em; /* Augmente la hauteur des images */
-    margin: 0 1em;
+    margin: 1em;
     object-fit: cover; /* Assure que les images gardent un ratio uniforme */
 }
 
