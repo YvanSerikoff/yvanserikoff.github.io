@@ -1,28 +1,59 @@
 /* Style de base */
 html {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: white;
+    background-color: #ffffff; /* White background */
 }
 
 body {
-    color: #fff;
+    color: #2c2c2c;
     margin: 0;
     position: relative;
-    background-image: url('../img/image.jpg');
+    background-color: #2c2c2c; /* Anthracite background */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     backdrop-filter: blur(20px);
 }
 
-header, footer {
+img {
+    transition: 0.3s;
+}
+
+img:hover {
+    scale: 1.1;
+}
+
+header{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px 0;
-    background-color: #fff;
-    color: #353535;
+    background-color: #ffffff; /* Anthracite background */
+    color: #000000; /* Blue text */
     flex-wrap: wrap; /* Permet d'enrouler les éléments pour les petits écrans */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ffffff; /* Anthracite background */
+    color: #000000; /* Blue text */
+    flex-wrap: wrap; /* Permet d'enrouler les éléments pour les petits écrans */
+    position: sticky;
+}
+
+header>h1>a{
+    color: #007bff;
+    transition: 0.3s;
+}
+
+header>h1>:hover{
+    font-size: 1.1em;
+    color: #6497ca;
 }
 
 header > nav {
@@ -41,36 +72,53 @@ header > nav > ul > li {
     font-size: larger;
 }
 
+#download-pdf {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#download-pdf:hover {
+    background-color: #0056b3;
+}
+
+
 a {
-    color: #353535;
     text-decoration: none;
+    color: #2c2c2c;
+    transition: 0.3s;
 }
 
 a:hover {
     transition: 0.3s;
-    color: #15a846;
+    color: #007bff;
 }
 
 .spacer {
     margin: 1.25em;
 }
 
-.sectionTitle {
+main>section:nth-child(even)>.sectionTitle {
     text-align: left;
     font-size: 2.5em;
-    margin: 1em 0;
-    margin-left: 0.5em;
+    color: #007bff; /* Blue text */
 }
 
-/* Responsive - Tablettes */
-@media (max-width: 992px) {
-    #presentation > div {
-        margin: 0 5em; /* Réduit les marges pour un meilleur affichage */
-        flex-direction: column; /* Stacking elements vertically */
-        text-align: center;
-    }
+main>section:nth-child(odd)>.sectionTitle {
+    text-align: left;
+    font-size: 2.5em;
+    margin: 1em 0 1em 0.5em;
+    color: #ffffff; /* Blue text */
+}
 
-    #presentation p {
-        font-size: 1.2em;
-    }
+main > section:nth-child(even) {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    padding: 1em;
+    margin: 2em;
 }
