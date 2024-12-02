@@ -87,7 +87,6 @@ header > nav > ul > li {
     background-color: #0056b3;
 }
 
-
 a {
     text-decoration: none;
     color: #2c2c2c;
@@ -101,6 +100,12 @@ a:hover {
 
 .spacer {
     margin: 1.25em;
+}
+
+.sectionTitle {
+    font-size: 2em;
+    text-align: center;
+    color: #007bff; /* Blue text */
 }
 
 main>section:nth-child(even)>.sectionTitle {
@@ -121,4 +126,37 @@ main > section:nth-child(even) {
     border-radius: 10px;
     padding: 1em;
     margin: 2em;
+}
+
+#video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    color: #ffffff;
+    margin: 0 auto; /* Center the container */
+}
+
+#video h1{
+    font-size: 3em;
+    color: white;
+}
+
+#video video {
+    margin: 1em;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+}
+
+#description p{
+    font-size: 1em;
+}
+
+#description a{
+    margin-top: 2em;
+    font-size: 2em;
 }

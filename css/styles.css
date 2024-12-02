@@ -20,7 +20,7 @@ img {
 }
 
 img:hover {
-    scale: 1.1;
+    scale: 1.05;
 }
 
 header{
@@ -308,17 +308,44 @@ main > section:nth-child(even) {
 /* Individual timeline items */
 .timeline-item {
     position: relative;
-    margin: 40px 0; /* Augmentation de l'espacement entre les items */
-    padding-left: 10em;
+    margin: 40px 0; /* Increase spacing between items */
     text-align: left;
+    display: block; /* Change to block to stack items vertically */
 }
 
 /* Position items on the left and right alternately */
-.timeline-item:nth-child(odd) {
+.timeline-item:nth-child(odd) .timeline-content {
     text-align: right;
     padding-left: 0;
-    padding-right: 7em;
+    padding-right: 0;
+    margin-left: auto;
+    flex-direction: column; /* Stack content vertically */
 }
+
+.timeline-item:nth-child(even) .timeline-content {
+    text-align: left;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: auto;
+    flex-direction: column; /* Stack content vertically */
+}
+
+/* Content box */
+.timeline-content {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    background: #ffffff; /* White background */
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Slightly rounded corners */
+    padding: 20px 25px; /* Increase box size */
+    max-width: 350px; /* Increase max width */
+    font-size: 16px; /* Increase font size */
+    color: #007bff; /* Blue text */
+    transition: 0.3s;
+    flex: 1;
+}
+
 /* Connecting dot */
 .timeline-item::before {
     content: '';
@@ -334,17 +361,18 @@ main > section:nth-child(even) {
     z-index: 1;
 }
 
-/* Content box */
-.timeline-content {
-    display: inline-block;
-    background: #ffffff; /* White background */
-    border: 1px solid #ddd;
-    border-radius: 12px; /* Coins légèrement plus arrondis */
-    padding: 20px 25px; /* Taille des boîtes augmentée */
-    max-width: 350px; /* Largeur maximale augmentée */
-    font-size: 16px; /* Taille de police agrandie */
-    color: #007bff; /* Blue text */
-    transition: 0.3s;
+.timeline-content img {
+    margin-right: 20px; /* Espace entre l'image et le texte */
+    max-width: 200px; /* Taille maximale de l'image */
+    height: auto; /* Conserve le ratio de l'image */
+}
+
+.timeline-content img:hover{
+    scale: none;
+}
+
+.timeline-content div {
+    flex: 1; /* Prend tout l'espace restant */
 }
 
 /* Highlight title and dates */
@@ -414,12 +442,83 @@ main > section:nth-child(even) {
     margin-top: 5px;
 }
 
+#projets {
+    font-family: Arial, sans-serif;
+    border-radius: 12px; /* Rounded corners */
+    color: white; /* Blue text */
+    background-color: #ffffff; /* White background */
+}
+
+#projets .liste_projets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#projets table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+#projets th, #projets td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#projets td {
+    background-color: #f9f9f9; /* Light grey background */
+    color: #2c2c2c; /* Dark text */
+}
+
+#projets a {
+    color: white; /* Blue text */
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 2em;
+}
+
+#projets th {
+    position: relative;
+    background-color: #007bff;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+#projets th a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit; /* Inherit color from th */
+    text-decoration: none; /* Remove underline */
+    transition: 0.3s;
+}
+
+#projets th:hover {
+    background-color: #0056b3; /* Dark blue background */
+}
+
+#projets th:hover a {
+    color: #ffffff; /* White text */
+    text-decoration: underline;
+}
+
+#projets img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 12px; /* Rounded corners */
+    transition: 0.3s;
+}
+
+#projets img:hover {
+    scale: 1.05;
+}
+
 /* Section générale */
 #loisirs {
-    padding: 20px;
     font-family: Arial, sans-serif;
-    margin: 20px 0;
-    border-radius: 12px; /* Coins arrondis */
     color: #007bff; /* Blue text */
 }
 
