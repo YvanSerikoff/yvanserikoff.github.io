@@ -103,32 +103,40 @@ a:hover {
     margin: 1.25em;
 }
 
-main>section:nth-child(even)>.sectionTitle {
-    text-align: left;
-    font-size: 2.5em;
-    color: #007bff; /* Blue text */
-}
-
-main>section:nth-child(odd)>.sectionTitle {
-    text-align: left;
-    font-size: 2.5em;
-    margin: 1em 0 1em 0.5em;
-    color: #ffffff; /* Blue text */
+section {
+    margin: 4em auto; /* Centrer les sections et réduire les marges */
+    max-width: 75%; /* Limiter la largeur des sections */
+    padding: 1em; /* Ajouter du padding pour l'espacement interne */
+    box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
 }
 
 main > section:nth-child(even) {
     background-color: #ffffff; /* White background */
     border-radius: 10px;
-    padding: 1em;
-    margin: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin: 2em auto; /* Center the sections */
+}
+
+main>section>.sectionTitle {
+    margin: 0;
+    font-size: 4em;
+    text-align: left;
+    color: #007bff; /* Blue text */
+}
+
+main>section:nth-child(even)>.sectionTitle {
+    color: #007bff; /* Blue text */
+}
+
+main>section:nth-child(odd)>.sectionTitle {
+    color: #ffffff; /* Blue text */
 }
 
 #presentation > div {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: 10em;
-    margin-right: 10em;
 }
 
 #presentation > div > * {
@@ -137,6 +145,8 @@ main > section:nth-child(even) {
 }
 
 #presentation p {
+    margin-bottom: 2em;
+    margin-top: 2em;
     font-size: 1.5em;
     text-align: justify;
     padding: 1em;
@@ -196,8 +206,8 @@ main > section:nth-child(even) {
 }
 
 .carousel-item img {
-    width: 25%; /* Fixe la largeur à 25% de la taille de l'élément parent */
-    height: 70%; /* Garde le ratio original de l'image */
+    width: 15%; /* Fixe la largeur à 25% de la taille de l'élément parent */
+    height: 50%; /* Garde le ratio original de l'image */
     display: block;
     margin: 0 auto;
     object-fit: contain; /* Gère l'adaptation de l'image à son conteneur */
