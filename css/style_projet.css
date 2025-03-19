@@ -152,6 +152,11 @@ main > section:nth-child(even) {
     height: auto;
 }
 
+#description {
+    margin-left: 18%;
+    margin-right: 18%;
+}
+
 #description p{
     font-size: 1em;
 }
