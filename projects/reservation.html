@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projet Classification S3 (KNN) — Démonstration</title>
+  <meta name="description" content="Démonstration vidéo et description du projet classification S3 (KNN)." />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/projet.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="Aller à la section À propos">
+      <div>
+        <h1 class="name">Yvan Serikoff</h1>
+        <p class="tagline">Étudiant en informatique • Recherche Alternance</p>
+      </div>
+    </a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul id="menu" class="nav-list">
+        <li><a href="../index.html#projets">Retour aux projets</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <article class="card project-wrap">
+    <a class="back-link" href="../index.html#projets">← Retour</a>
+
+    <header class="project-hero">
+      <div class="project-meta" aria-label="Métadonnées du projet">
+        <span class="project-chip">Semestre 5</span>
+        <span class="project-chip">Springboot</span>
+        <span class="project-chip">SQL</span>
+      </div>
+      <h1>Projet Site de réservation</h1>
+      <div class="video-frame" role="region" aria-label="Vidéo de démonstration">
+        <video controls preload="metadata" poster="../assets/videos/video-placeholder%20(1).png">
+          <source src="../assets/videos/reservation.mkv" type="video/mp4" />
+          Votre navigateur ne supporte pas la vidéo HTML5.
+        </video>
+      </div>
+    </header>
+
+    <section class="project-body">
+      <h2>Description</h2>
+
+      <p>Création d’un site de réservation de créneau. Réalisé en Springboot pour le back-end et Thymeleaf pour le front-end, avec une base de données MySQL pour la persistance des données.</p>
+      <p>Projet réalisé en équipe de 2 personnes, avec une répartition des tâches et une collaboration régulière pour intégrer les différentes parties du projet.</p>
+
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year" ></span>  Yvan Serikoff — CV numérique.</p>
+  </div>
+</footer>
+
+<script defer src="../js/hard-skills-carousel.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

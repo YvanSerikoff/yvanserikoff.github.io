@@ -174,6 +174,116 @@ p { margin: 0 0 .75rem; color: var(--text); }
 }
 .icon-btn:hover { background: var(--chip); }
 
+/* Menu déroulant navigation */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: .45rem .6rem;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  cursor: pointer;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  transition: background .18s ease, border-color .18s ease;
+  font-weight: 600;
+}
+
+.nav-dropdown-btn:hover {
+  background: var(--chip);
+  border-color: var(--border);
+}
+
+.nav-dropdown-btn[aria-expanded="true"] {
+  background: var(--chip);
+  border-color: var(--border);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 180px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  list-style: none;
+  margin: .5rem 0 0;
+  padding: .5rem 0;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
+  z-index: 100;
+}
+
+.nav-dropdown-btn[aria-expanded="true"] + .nav-dropdown-menu,
+.nav-dropdown-menu:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown-menu li {
+  margin: 0;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: .6rem .9rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: background .15s ease;
+}
+
+.nav-dropdown-menu a:hover {
+  background: var(--chip);
+}
+
+@media (max-width: 860px) {
+  .nav-dropdown {
+    position: static;
+  }
+
+  .nav-dropdown-btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    transition: all .2s ease;
+    padding: 0;
+  }
+
+  .nav-dropdown-btn[aria-expanded="true"] + .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px;
+    margin-top: .5rem;
+  }
+
+  .nav-dropdown-menu a {
+    padding: .4rem .9rem .4rem 2rem;
+    font-size: .9rem;
+  }
+}
+
 @media (max-width: 860px) {
   .site-nav .nav-toggle { display: inline-block; }
   .nav-list {
@@ -247,6 +357,16 @@ p { margin: 0 0 .75rem; color: var(--text); }
 .intro .intro-grid p { margin: 0; }
 .intro .cta-row { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .75rem; }
 
+.intro-hook {
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, var(--primary), color-mix(in oklab, var(--primary) 40%, var(--success)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
 @media (max-width: 640px) {
   .intro .intro-grid { grid-template-columns: 1fr; align-items: start; }
   .intro .avatar { width: 140px; height: 140px; }
@@ -275,7 +395,6 @@ p { margin: 0 0 .75rem; color: var(--text); }
 /* Piste: animée en continu par JS, pas d'animation CSS par slide */
 #hard-skills .skills {
   position: relative; z-index: 1; display: flex; gap: 0; padding: 0; margin: 0; list-style: none;
-  transition: none !important;
   will-change: transform;
 }
 
@@ -296,16 +415,15 @@ p { margin: 0 0 .75rem; color: var(--text); }
   aspect-ratio: 1 / 1; object-fit: contain;
   background: var(--bg-elev); border: 1px solid var(--border);
   border-radius: .6rem; padding: .35rem; box-shadow: var(--shadow-sm);
-  transition: none !important;       /* pas d’hover */
 }
 #hard-skills .skills li > span { font-size: .95rem; letter-spacing: .2px; font-weight: 650; }
 
-/* Désactive tout hover/focus visuel sur le carrousel et masque d’anciens boutons */
+/* Désactive tout hover/focus visuel sur le carrousel et masque d'anciens boutons */
 #hard-skills .skills li:hover,
-#hard-skills .skills li:focus-within { transform: none !important; box-shadow: var(--shadow-sm) !important; border-color: color-mix(in oklab, var(--border) 80%, transparent) !important; }
+#hard-skills .skills li:focus-within { transform: none; box-shadow: var(--shadow-sm); border-color: color-mix(in oklab, var(--border) 80%, transparent); }
 #hard-skills .skills li:hover .skill-icon,
-#hard-skills .skills li:focus-within .skill-icon { transform: none !important; box-shadow: var(--shadow-sm) !important; border-color: var(--border) !important; filter: none !important; }
-#hard-skills .carousel-btn { display: none !important; }
+#hard-skills .skills li:focus-within .skill-icon { transform: none; box-shadow: var(--shadow-sm); border-color: var(--border); filter: none; }
+#hard-skills .carousel-btn { display: none; }
 
 /* ===========================
    Soft Skills & Loisirs — grilles 2x2
@@ -369,28 +487,131 @@ p { margin: 0 0 .75rem; color: var(--text); }
 /* ===========================
    Timeline, Projets, Chips
    =========================== */
-.timeline { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--border); }
-.timeline li { position: relative; margin: 0 0 1rem 1rem; padding-left: 1rem; }
-.timeline li::before {
-  content: ""; position: absolute; left: -1.16rem; top: .35rem;
-  width: .7rem; height: .7rem; border-radius: 50%;
-  background: var(--primary); border: 2px solid var(--bg);
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 3px solid var(--border);
+  transition: border-color .25s ease;
 }
-.timeline .time { color: var(--muted); font-size: .95rem; margin-bottom: .25rem; }
-.timeline .content h3 { margin: .1rem 0 .25rem; font-size: 1.05rem; }
 
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: .9rem; }
+.timeline:hover {
+  border-left-color: var(--primary);
+}
+
+.timeline li {
+  position: relative;
+  margin: 0 0 2rem 1.5rem;
+  padding-left: 1.15rem;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  /* Légèrement plus à droite pour laisser un vrai espace avec la ligne */
+  left: -1.2rem;
+  top: 1rem;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 3px var(--primary);
+  transform: translateY(-50%);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.timeline li:hover::before {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px var(--primary), 0 4px 12px color-mix(in oklab, var(--primary) 40%, rgba(0,0,0,.15));
+}
+
+.timeline .time {
+  color: var(--primary);
+  font-size: .9rem;
+  margin-bottom: .35rem;
+  font-weight: 700;
+}
+
+.timeline .content h3 {
+  margin: 0 0 .35rem;
+  font-size: 1.1rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.timeline .content p {
+  margin: 0 0 .5rem;
+  font-size: .95rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
 .project {
-  border: 1px solid var(--border); background: var(--bg-elev);
-  border-radius: .9rem; padding: .9rem; display: flex; flex-direction: column; gap: .5rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--card) 98%, transparent), var(--card));
+  border-radius: 1rem;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
   box-shadow: var(--shadow-sm);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position: relative;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+}
+
+.project-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, color-mix(in oklab, var(--primary) 20%, transparent), color-mix(in oklab, var(--success) 15%, transparent));
+  color: var(--primary);
+  padding: .35rem .75rem;
+  border-radius: .5rem;
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  border: 1px solid color-mix(in oklab, var(--primary) 30%, var(--border));
+  width: fit-content;
+}
+
+.project h3 {
+  margin: .25rem 0 .35rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.project > p:first-of-type {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+.project-highlight {
+  background: color-mix(in oklab, var(--primary) 8%, transparent);
+  border-left: 3px solid var(--primary);
+  padding: .6rem;
+  border-radius: .5rem;
+  font-size: .9rem;
+  color: var(--text);
+  margin: .4rem 0;
+}
+
+.project-highlight strong {
+  color: var(--primary);
 }
 .badge {
   background: linear-gradient(90deg,
   color-mix(in oklab, var(--primary) 28%, transparent),
   color-mix(in oklab, var(--success) 20%, transparent)
   );
-  color: #0b1220;
+  color: var(--text);
   padding: .12rem .45rem; border-radius: .45rem; font-size: .8rem;
   border: 1px solid color-mix(in oklab, var(--primary) 55%, var(--success));
 }
@@ -415,33 +636,49 @@ p { margin: 0 0 .75rem; color: var(--text); }
 .contact-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  gap: 1.2rem;
 }
 .contact-card {
-  background: var(--bg-elev);
+  background: linear-gradient(135deg, color-mix(in oklab, var(--card) 98%, transparent), color-mix(in oklab, var(--card) 96%, transparent));
   border: 1px solid var(--border);
-  border-radius: .9rem;
-  padding: 1rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: .6rem;
-  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  gap: .8rem;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  text-align: center;
 }
 .contact-card:hover,
 .contact-card:focus-within {
-  transform: translateY(-2px);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: var(--shadow-md);
   border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
 }
 .contact-card .contact-icon,
 .contact-card > img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
+  width: 80px;
+  height: 80px;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
   border-radius: .8rem;
   border: 1px solid var(--border);
-  background: var(--bg-elev);
+  background: color-mix(in oklab, var(--primary) 4%, transparent);
+  margin: 0 auto;
+  padding: .5rem;
+}
+
+.contact-card h3 {
+  margin: .5rem 0;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.contact-card p {
+  margin: 0;
+  font-size: .9rem;
+  color: var(--muted);
 }
 
 /* ===========================
@@ -470,6 +707,936 @@ p { margin: 0 0 .75rem; color: var(--text); }
 }
 
 /* ===========================
-   Sécurité anti-overflow globale
+   Sections réfactorisées (Positionnement, Expériences, Skills, Soft, Auto-analyse)
    =========================== */
-html, body { overflow-x: hidden; }
+
+/* Section Positionnement */
+#positionnement { --accent: linear-gradient(90deg, var(--primary), var(--accent-1)); }
+#positionnement h3 { margin: .75rem 0 .5rem; font-size: 1.15rem; }
+#positionnement h4 { margin: 1rem 0 .5rem; font-size: 1rem; color: var(--primary); }
+
+.positioning-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.positioning-content ul.positioning-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 .75rem;
+}
+.positioning-content ul.positioning-list li {
+  padding: .35rem 0 .35rem 1.5rem;
+  position: relative;
+  color: var(--text);
+}
+.positioning-content ul.positioning-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Section Expériences */
+#experiences { --accent: linear-gradient(90deg, var(--danger), var(--warn)); }
+.section-intro {
+  color: var(--muted);
+  font-size: .95rem;
+  margin: -0.5rem 0 1rem;
+  font-style: italic;
+}
+
+.experiences-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.experience-item {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg,
+    color-mix(in oklab, var(--card) 98%, transparent),
+    color-mix(in oklab, var(--card) 94%, transparent)
+  );
+  border-radius: .9rem;
+  padding: 1.1rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .22s ease, border-color .22s ease;
+}
+.experience-item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in oklab, var(--primary) 30%, var(--border));
+}
+
+.exp-header { margin-bottom: .8rem; }
+.exp-header h3 { margin: 0 0 .35rem; font-size: 1.1rem; }
+.exp-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: .9rem;
+  color: var(--muted);
+}
+.exp-duration::before,
+.exp-location::before { margin-right: .35rem; }
+
+/* Onglets d'expérience */
+.exp-tabs {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-bottom: .8rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: .5rem;
+}
+.exp-tab-btn {
+  padding: .45rem .75rem;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: .9rem;
+  border-radius: .45rem 0 0 .45rem;
+  transition: color .18s ease, background .18s ease;
+  font-weight: 600;
+}
+.exp-tab-btn:hover {
+  background: var(--chip);
+  color: var(--text);
+}
+.exp-tab-btn.active {
+  background: color-mix(in oklab, var(--primary) 18%, transparent);
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+}
+
+/* Contenu des onglets (masqué par défaut) */
+.exp-tab-content {
+  display: none;
+  animation: fadeIn .22s ease;
+}
+.exp-tab-content.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.exp-tab-content h4 {
+  margin: .75rem 0 .5rem;
+  color: var(--primary);
+  font-size: 1rem;
+}
+.exp-content {
+  padding-top: .5rem;
+}
+.missions-list,
+.interactions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.missions-list li,
+.interactions-list li {
+  padding: .5rem 0 .5rem 1.5rem;
+  position: relative;
+  margin-bottom: .5rem;
+}
+.missions-list li::before,
+.interactions-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+.missions-list li strong,
+.interactions-list li strong {
+  color: var(--text);
+}
+
+/* Hard Skills (restructuré) */
+.skills-by-category {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-category {
+  border: 1px solid var(--border);
+  border-radius: .9rem;
+  background: linear-gradient(180deg,
+    color-mix(in oklab, var(--card) 98%, transparent),
+    color-mix(in oklab, var(--card) 94%, transparent)
+  );
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+
+.skill-category:hover {
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in oklab, var(--primary) 25%, var(--border));
+}
+
+.category-title {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.skill-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: background .2s ease, padding .2s ease;
+}
+
+.skill-item:last-child {
+  border-bottom: none;
+}
+
+.skill-item:hover {
+  background: color-mix(in oklab, var(--primary) 3%, transparent);
+  padding: 1rem 0.75rem;
+  border-radius: .5rem;
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .5rem;
+  flex-wrap: wrap;
+}
+
+.skill-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.level-badge {
+  display: inline-block;
+  padding: .25rem .6rem;
+  border-radius: .4rem;
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+
+.level-badge.expert {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  color: #fff;
+}
+
+.level-badge.advanced {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: #fff;
+}
+
+.level-badge.intermediate {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  color: var(--text);
+}
+
+.level-badge.beginner {
+  background: linear-gradient(90deg, #9ca3af, #d1d5db);
+  color: var(--text);
+}
+
+.skill-item p {
+  margin: .35rem 0;
+  font-size: .95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.skill-item strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Soft Skills (restructuré) */
+.soft-skills-by-category {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.soft-skill-category {
+  border: 1px solid var(--border);
+  border-radius: .9rem;
+  background: linear-gradient(180deg,
+    color-mix(in oklab, var(--card) 98%, transparent),
+    color-mix(in oklab, var(--card) 94%, transparent)
+  );
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.category-icon-title {
+  font-size: 1.05rem;
+  margin: 0 0 1rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.soft-skill-item {
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.soft-skill-item:last-child {
+  border-bottom: none;
+}
+
+.soft-skill-item h4 {
+  margin: .5rem 0 .35rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+.soft-skill-item p {
+  margin: .2rem 0;
+  font-size: .95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.soft-skill-item strong {
+  color: var(--primary);
+}
+
+/* Auto-analyse */
+#auto-analyse { --accent: linear-gradient(90deg, var(--accent-2), var(--accent-1)); }
+
+.self-analysis-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.analysis-block {
+  border: 1px solid var(--border);
+  border-radius: .9rem;
+  background: linear-gradient(180deg,
+    color-mix(in oklab, var(--card) 98%, transparent),
+    color-mix(in oklab, var(--card) 94%, transparent)
+  );
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.analysis-block h3 {
+  margin: 0 0 .75rem;
+  font-size: 1.05rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.analysis-list,
+.analysis-strengths,
+.analysis-improvements,
+.analysis-needs,
+.analysis-company {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.analysis-list li,
+.analysis-strengths li,
+.analysis-improvements li,
+.analysis-needs li,
+.analysis-company li {
+  padding: .5rem 0 .5rem 1.5rem;
+  position: relative;
+  margin-bottom: .35rem;
+  color: var(--text);
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+.analysis-list li::before,
+.analysis-strengths li::before,
+.analysis-improvements li::before,
+.analysis-needs li::before,
+.analysis-company li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.analysis-block p {
+  margin: 0 0 .75rem;
+  font-size: .95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ===========================
+   Hard Skills - Grid visuel
+   =========================== */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.skill-card {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--card) 98%, transparent), var(--card));
+  border: 1px solid var(--border);
+  border-radius: .9rem;
+  padding: 1.2rem;
+  text-align: center;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+}
+
+.skill-icon {
+  font-size: 2rem;
+  color: var(--primary);
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-card h4 {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--text);
+}
+
+.skill-bar {
+  height: 6px;
+  background: color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), color-mix(in oklab, var(--primary) 40%, var(--success)));
+  border-radius: 999px;
+  transition: width .4s ease;
+}
+
+.skill-level {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+
+.skill-meta {
+  font-size: .8rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ===========================
+   AMÉLIORATIONS GRAPHIQUES - Timeline & Positioning
+   =========================== */
+
+/* Positioning Cards - 3 colonnes avec icônes grands */
+.positioning-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.pos-card {
+  background: linear-gradient(135deg, color-mix(in oklab, var(--card) 98%, transparent), color-mix(in oklab, var(--card) 96%, transparent));
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform .25s cubic-bezier(.34,.1,.64,1), box-shadow .25s ease, border-color .25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pos-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, color-mix(in oklab, var(--primary) 10%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+
+.pos-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 32px color-mix(in oklab, var(--primary) 22%, rgba(0,0,0,.1));
+  border-color: color-mix(in oklab, var(--primary) 45%, var(--border));
+}
+
+.pos-card:hover::before {
+  opacity: 1;
+}
+
+.pos-card-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  background: linear-gradient(135deg, color-mix(in oklab, var(--primary) 12%, transparent), color-mix(in oklab, var(--success) 8%, transparent));
+  border-radius: .75rem;
+  margin-bottom: .25rem;
+  transition: transform .25s ease;
+}
+
+.pos-card:hover .pos-card-icon {
+  transform: scale(1.12) rotate(3deg);
+}
+
+.pos-card h3 {
+  margin: .25rem 0 .5rem;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.pos-card p {
+  margin: 0;
+  font-size: .9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Timeline expériences - design moderne */
+.experiences-timeline {
+  position: relative;
+  padding: 1.5rem 0;
+}
+
+.experiences-timeline::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary), color-mix(in oklab, var(--primary) 50%, transparent));
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.timeline-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 4px var(--primary);
+  transition: transform .25s ease, background .25s ease;
+  z-index: 2;
+}
+
+.timeline-item.timeline-main .timeline-icon {
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  box-shadow: 0 0 0 4px var(--primary), 0 4px 12px color-mix(in oklab, var(--primary) 40%, rgba(0,0,0,.15));
+}
+
+.timeline-item:hover .timeline-icon {
+  transform: scale(1.1);
+}
+
+.timeline-date {
+  font-size: .85rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--primary);
+  letter-spacing: .3px;
+}
+
+.timeline-content {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--card) 98%, transparent), color-mix(in oklab, var(--card) 96%, transparent));
+  border: 1px solid var(--border);
+  border-radius: .9rem;
+  padding: 1.2rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+
+.timeline-item.timeline-main .timeline-content {
+  border-left: 4px solid var(--primary);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--primary) 4%, var(--card)), var(--card));
+}
+
+.timeline-item:hover .timeline-content {
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+}
+
+.timeline-content h3 {
+  margin: 0 0 .35rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.timeline-subtitle {
+  margin: 0 0 .75rem;
+  font-size: .9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.exp-spotlight {
+  background: color-mix(in oklab, var(--primary) 6%, transparent);
+  border-left: 3px solid var(--primary);
+  padding: .8rem;
+  border-radius: .6rem;
+  margin: .75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.spotlight-item {
+  font-size: .9rem;
+  color: var(--text);
+}
+
+.spotlight-item strong {
+  color: var(--primary);
+}
+
+/* Timeline toggle button */
+.timeline-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: .85rem;
+  margin-top: .75rem;
+  transition: background .2s ease, border-color .2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.timeline-toggle:hover {
+  background: var(--chip);
+  border-color: var(--primary);
+}
+
+.timeline-details {
+  margin-top: .75rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--border);
+  animation: slideDown .25s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 800px;
+  }
+}
+
+.timeline-details h4 {
+  margin: 1rem 0 .5rem;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.timeline-details p, .timeline-details ul {
+  margin: 0 0 .5rem;
+  font-size: .9rem;
+  color: var(--text);
+}
+
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 .5rem;
+}
+
+.bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: .35rem 0;
+  font-size: .9rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.bullet-list li::before {
+  content: "→";
+  flex: 0 0 1rem;
+  width: 1rem;
+  text-align: center;
+  margin-top: .02rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Analysis Grid amélioré */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.analysis-card {
+  background: linear-gradient(135deg, color-mix(in oklab, var(--card) 98%, transparent), color-mix(in oklab, var(--card) 96%, transparent));
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  position: relative;
+}
+
+.analysis-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+}
+
+.card-icon {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  color: var(--primary);
+  margin: 0 auto;
+}
+
+.analysis-card h3 {
+  margin: .25rem 0 .5rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.analysis-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.analysis-card li {
+  padding: .35rem 0 .35rem 1rem;
+  position: relative;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.analysis-card li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: .6rem;
+}
+
+/* Soft Skills Card amélioré */
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.soft-skill-card {
+  background: linear-gradient(135deg, color-mix(in oklab, var(--card) 98%, transparent), color-mix(in oklab, var(--card) 96%, transparent));
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  transition: all .25s cubic-bezier(.34,.1,.64,1);
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.soft-skill-card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  right: -100%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, color-mix(in oklab, var(--skill-color) 8%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+
+.soft-skill-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 32px color-mix(in oklab, var(--skill-color) 20%, rgba(0,0,0,.12));
+  border-color: var(--skill-color);
+}
+
+.soft-skill-card:hover::before {
+  opacity: 1;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .2rem;
+}
+
+.card-header i {
+  font-size: 1.4rem;
+  color: var(--skill-color, var(--primary));
+  min-width: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.card-situation {
+  font-size: .85rem;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.5;
+  background: color-mix(in oklab, var(--skill-color) 6%, transparent);
+  padding: .6rem;
+  border-radius: .5rem;
+  border-left: 2px solid var(--skill-color, var(--primary));
+}
+
+.card-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, color-mix(in oklab, var(--skill-color, var(--primary)) 15%, transparent), color-mix(in oklab, var(--skill-color, var(--primary)) 8%, transparent));
+  color: var(--skill-color, var(--primary));
+  padding: .3rem .6rem;
+  border-radius: .4rem;
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+  border: 1px solid color-mix(in oklab, var(--skill-color, var(--primary)) 25%, transparent);
+  align-self: flex-start;
+}
+
+/* Mobile responsif */
+@media (max-width: 768px) {
+  .experiences-timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 70px 1fr;
+    gap: 1rem;
+  }
+
+  .positioning-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .soft-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .soft-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pos-card {
+    padding: 1rem;
+  }
+
+  .pos-card-icon {
+    font-size: 2rem;
+    min-height: 2.5rem;
+  }
+
+  .timeline-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .timeline-item.timeline-main .timeline-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+

@@ -34,6 +34,30 @@
     });
   }
 
+  // Gestion du menu déroulant "Plus"
+  const dropdownBtn = document.querySelector('.nav-dropdown-btn');
+  const dropdownMenu = document.querySelector('.nav-dropdown-menu');
+  if (dropdownBtn && dropdownMenu) {
+    dropdownBtn.addEventListener('click', () => {
+      const expanded = dropdownBtn.getAttribute('aria-expanded') === 'true';
+      dropdownBtn.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // Fermer le menu au clic sur un lien
+    dropdownMenu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        dropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Fermer le menu au clic dehors
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        dropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   const yearSpan = document.getElementById('year');
   if (yearSpan) yearSpan.textContent = String(new Date().getFullYear());
 

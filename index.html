@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CV — Yvan Serikoff</title>
-  <meta name="description" content="CV numérique étudiant — compétences, formations, expériences, projets et contact." />
+  <title>Portfolio — Yvan Serikoff</title>
+  <meta name="description" content="Portfolio professionnel — Positionnement, expérience, compétences techniques et comportementales, analyse réflexive." />
   <meta name="theme-color" content="#2563eb" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
@@ -14,10 +14,10 @@
   <script defer src="js/main.js"></script>
   <script defer src="https://kit.fontawesome.com/a2d9a9b1a1.js" crossorigin="anonymous"></script>
 
-  <meta property="og:title" content="CV — Yvan Serikoff" />
-  <meta property="og:description" content="CV numérique étudiant — compétences, formations, expériences, projets et contact." />
+  <meta property="og:title" content="Portfolio — Yvan Serikoff" />
+  <meta property="og:description" content="Portfolio professionnel — Positionnement, expérience, compétences, analyse réflexive." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og-cover.jpg" />
+  <meta property="og:image" content="assets/profile.jpg" />
   <meta property="og:url" content="https://github.com/YvanSerikoff" />
 
   <script type="application/ld+json">
@@ -40,22 +40,30 @@
 <a class="skip-link" href="#contenu">Aller au contenu</a>
 <header class="site-header" role="banner">
   <div class="container header-inner">
-    <a class="brand" href="#a-propos" aria-label="Aller à la section À propos">
+    <a class="brand" href="#positionnement" aria-label="Aller à la section Positionnement">
       <div>
         <h1 class="name">Yvan Serikoff</h1>
-        <p class="tagline">Étudiant en informatique • Recherche Stage</p>
+        <p class="tagline">Développeur • Apprenant continu • En recherche d'une alternance</p>
       </div>
     </a>
     <nav class="site-nav" aria-label="Navigation principale">
       <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
       <ul id="menu" class="nav-list">
+        <li><a href="#positionnement">Présentation</a></li>
+        <li><a href="#experiences">Expériences</a></li>
         <li><a href="#hard-skills">Hard Skills</a></li>
         <li><a href="#soft-skills">Soft Skills</a></li>
-        <li><a href="#formations">Formations</a></li>
-        <li><a href="#experiences">Expériences</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#loisirs">Loisirs</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-label="Menu supplémentaire">
+            Plus <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="#auto-analyse">Auto-analyse</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#formations">Formations</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </li>
         <li>
           <button id="theme-toggle" class="icon-btn" aria-label="Basculer le thème">
             <i class="fa-solid fa-moon"></i>
@@ -67,194 +75,438 @@
 </header>
 
 <main id="contenu" class="container">
-  <section id="a-propos" class="intro card">
-    <h2>À propos</h2>
+
+  <!-- 1️⃣ PRÉSENTATION ET POSITIONNEMENT PROFESSIONNEL -->
+  <section id="positionnement" class="intro card section-primary">
+    <h2><Présentation></Présentation></h2>
+
+    <!-- Profil visuel -->
     <div class="intro-grid">
-    <img src="assets/profile.jpg" alt="Photo de Yvan Serikoff" class="avatar" />
-    <p>Étudiant en <strong>BUT Informatique</strong>, je cherche à faire évoluer mes compétences en développement
-      application à l’aide d’un <strong>stage</strong> À l’écoute et pro-actif, le travail en groupe me motive à me
-      dépasser et à en apprendre plus sur moi, les autres et sur mon secteur d’activité. De plus, je suis une
-      personne créative faisant en sorte de toujours apporter des idées et des avis construit durant les
-      phases de projet.<br><br>
-
-      Que ce soit sous la forme de dessins, de musiques ou de développement, la création a toujours eu une
-      place importante dans ma vie, ce choix était donc tout naturel. Pouvoir construire pièce par pièce une
-      œuvre, un programme, une application, c’est ce qui me plaît vraiment dans l’informatique.<br><br>
-
-      Si ce résumé de ma personne a piqué votre curiosité, n’hésitez pas à explorer mon CV numérique et à me
-      contacter !
-    </p>
+      <img src="assets/profile.jpg" alt="Photo de Yvan Serikoff" class="avatar" />
+      <div class="positioning-content">
+        <p class="intro-hook"><strong>Alternant Ingénieur Informatique</strong></p>
+        <p style="font-size: 0.95rem; color: var(--muted); margin: 0; line-height: 1.6;">
+          Admissible à l'IMT Nord Europe et à la recherche d'une opportunité en alternance de 36 mois,
+          <br>je cherche à mettre en pratique mes compétences techniques et comportementales, tout en continuant à apprendre et à contribuer à des projets significatifs. Passionné par le développement mobile et les technologies web, je suis motivé par l'idée de travailler sur des produits qui ont un impact réel sur les utilisateurs.
+        </p>
+      </div>
     </div>
+
+    <!-- CTA -->
     <div class="cta-row">
       <a class="btn primary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Me contacter</a>
-      <a class="btn" href="assets/CV_Yvan_Serikoff.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
+      <a class="btn" href="assets/CV_Serikoff_Yvan_IMT_2026.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
     </div>
   </section>
 
-  <section id="hard-skills" class="card">
-    <h2>Hard Skills</h2>
+  <!-- 2️⃣ EXPÉRIENCES EN STAGE/ALTERNANCE -->
+  <section id="experiences" class="card section-primary">
+    <h2>Expériences</h2>
 
-    <div class="carousel" role="region" aria-roledescription="carrousel" aria-label="Hard Skills">
-      <div class="carousel-viewport">
-        <ul class="skills" id="hard-skills-track" tabindex="0" aria-label="Carrousel des Hard Skills (défilement automatique)">
-          <li>
-            <img src="assets/java-logo-1.png" alt="Logo Java" class="skill-icon" />
-            <span>Java</span>
-          </li>
-          <li>
-            <img src="assets/Postgresql_elephant.svg.png" alt="Logo PostgreSQL" class="skill-icon" />
-            <span>SQL</span>
-          </li>
-          <li>
-            <img src="assets/js.png" alt="Logo JavaScript" class="skill-icon" />
-            <span>JavaScript</span>
-          </li>
-          <li>
-            <img src="assets/HTML5_logo_and_wordmark.svg.png" alt="Logo CSS3" class="skill-icon" />
-            <span>HTML</span>
-          </li>
-          <li>
-            <img src="assets/CSS3_logo_and_wordmark.svg" alt="Logo HTML5" class="skill-icon" />
-            <span>CSS</span>
-          </li>
+    <div class="experiences-timeline">
+      <!-- Stage Erasmus S5 -->
+      <div class="timeline-item timeline-main">
+        <div class="timeline-marker">
+          <div class="timeline-icon"><i class="fa-solid fa-globe"></i></div>
+          <div class="timeline-date">2025<br />3 mois</div>
+        </div>
+        <div class="timeline-content">
+          <h3>Stage Erasmus — ISEC Coimbra 🇵🇹</h3>
+          <p class="timeline-subtitle">Développement mobile | Application de maintenance</p>
+
+          <div class="exp-spotlight">
+            <div class="spotlight-item">
+              <strong>🎯 Rôle :</strong> Développeur fullstack mobile (Flutter/Kotlin)
+            </div>
+            <div class="spotlight-item">
+              <strong>📊 Impact :</strong> App complète ~3 mois
+            </div>
+          </div>
+
+          <button class="timeline-toggle" aria-expanded="false">
+            <span>Voir détails complets</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+
+          <div class="timeline-details" hidden>
+            <h4>Contexte</h4>
+            <p>École supérieure portugaise (ISEC) spécialisée dans le numérique. Duo de dev se repartissant entre back et front.</p>
+
+            <h4>Missions clés</h4>
+            <ul class="bullet-list">
+              <li>Développement app mobile complète (Flutter + Kotlin)</li>
+              <li>Intégration API REST, authentification JWT, tests réels</li>
+            </ul>
+
+            <h4>Apprentissages</h4>
+            <p><strong>Techniques :</strong> Flutter (widgets, state management), Kotlin natif, API REST, UI/UX mobile.</p>
+            <p><strong>Comportementales :</strong> Autonomie, travail en équipe, communication avec le client.</p>
+          </div>
+
+          <div class="chips">
+            <span class="chip">Flutter</span>
+            <span class="chip">Kotlin</span>
+            <span class="chip">API REST</span>
+          </div>
+        </div>
+      </div>
+
+       <!-- BDE BUT Informatique - Pôle Communication-->
+       <div class="timeline-item timeline-secondary">
+         <div class="timeline-marker">
+           <div class="timeline-icon"><i class="fa-solid fa-megaphone"></i></div>
+           <div class="timeline-date">2025<br />1 an</div>
+         </div>
+         <div class="timeline-content">
+           <h3>Responsable Communication & Événementiel — BDE Informatique</h3>
+           <p class="timeline-subtitle">Pilotage de la stratégie de communication et des événements de promotion</p>
+
+           <div class="exp-spotlight">
+             <div class="spotlight-item">
+               <strong>📣 Réalisations :</strong> 5+ événements coordonnés, +200 participants engagés
+             </div>
+             <div class="spotlight-item">
+               <strong>🎯 Rôle :</strong> Stratégie, négociation partenaires, gestion équipe
+             </div>
+           </div>
+
+           <div class="chips">
+             <span class="chip">Événementiel</span>
+             <span class="chip">Stratégie</span>
+             <span class="chip">Leadership</span>
+           </div>
+         </div>
+       </div>
+
+      <!-- Stage ouvrier 2023 -->
+      <div class="timeline-item timeline-secondary">
+        <div class="timeline-marker">
+          <div class="timeline-icon"><i class="fa-solid fa-hammer"></i></div>
+          <div class="timeline-date">2023<br />1 mois</div>
+        </div>
+        <div class="timeline-content">
+          <h3>Stage Ouvrier — Solution Corde 🏗️</h3>
+          <p class="timeline-subtitle">Structures événementielles</p>
+          <p><strong>Apprentissage :</strong> Rigueur, délais fermes, travail d'équipe physique.</p>
+        </div>
+      </div>
+
+      <!-- Bénévolat 2023 -->
+      <div class="timeline-item timeline-secondary">
+        <div class="timeline-marker">
+          <div class="timeline-icon"><i class="fa-solid fa-heart"></i></div>
+          <div class="timeline-date">2023<br />1 mois</div>
+        </div>
+        <div class="timeline-content">
+          <h3>Bénévolat — Refuge de Chat, Villejuif 🐱</h3>
+          <p class="timeline-subtitle">Outils de gestion + sensibilisation</p>
+          <p><strong>Apprentissage :</strong> Écoute, empathie, utilité sociale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3️⃣ COMPÉTENCES TECHNIQUES - HARD SKILLS -->
+  <section id="hard-skills" class="card section-primary">
+    <h2>Compétences Techniques (Hard Skills)</h2>
+    <p class="section-intro">Compétences mobilisées en contexte professionnel — organisées par catégorie et niveau.</p>
+
+    <div class="skills-by-category">
+      <!-- Langages de programmation -->
+      <div class="skill-category">
+        <h3 class="category-title"><i class="fa-solid fa-code" style="margin-right: .5rem;"></i>Langages de programmation</h3>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <h4>Spring</h4>
+          </div>
+          <p><strong>Contexte :</strong> S6 (projet calendrier)</p>
+          <p><strong>Savoir-faire :</strong> MVC, JPA/Hibernate, sécurité basique, API REST</p>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <h4>React</h4>
+          </div>
+          <p><strong>Contexte :</strong> S6 (projet agile)</p>
+          <p><strong>Savoir-faire :</strong> Composants, hooks, gestion d'état, appels API</p>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <h4>Java / Kotlin</h4>
+          </div>
+          <p><strong>Contexte :</strong> S3-S4 (projets académiques), S5 (Erasmus)</p>
+          <p><strong>Savoir-faire :</strong> POO classique, collections, syntaxe moderne (Kotlin)</p>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <h4>Flutter</h4>
+          </div>
+          <p><strong>Contexte :</strong> S5 (Erasmus)</p>
+          <p><strong>Savoir-faire :</strong> Widgets, state management (Provider), API REST, UI/UX mobile</p>
+        </div>
+      </div>
+
+      <!-- Bases de données -->
+      <div class="skill-category">
+        <h3 class="category-title"><i class="fa-solid fa-database" style="margin-right: .5rem; color: #336791;"></i>Bases de données</h3>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <h4>SQL / PostgreSQL</h4>
+          </div>
+          <p><strong>Contexte :</strong> S6 (projet calendrier)</p>
+          <p><strong>Savoir-faire :</strong> Joins, aggrégations, transactions, indexes, sécurité (SQL injection)</p>
+        </div>
+      </div>
+
+      <!-- Outils & Processus -->
+      <div class="skill-category">
+        <h3 class="category-title"><i class="fa-solid fa-wrench" style="margin-right: .5rem; color: #F1502F;"></i>Outils &amp; Processus</h3>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <h4>Git / GitHub</h4>
+          </div>
+          <p><strong>Contexte :</strong> Tous les projets, workflow quotidien Erasmus</p>
+          <p><strong>Savoir-faire :</strong> Branches, pull requests, merge conflicts, code review</p>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <h4>Agilité (Scrum)</h4>
+          </div>
+          <p><strong>Contexte :</strong> Erasmus (sprints 2 sem), S4</p>
+          <p><strong>Savoir-faire :</strong> Sprint planning, daily standup, retrospectives, user stories</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4️⃣ COMPÉTENCES COMPORTEMENTALES - SOFT SKILLS -->
+  <section id="soft-skills" class="card section-primary">
+    <h2>Compétences Comportementales (Soft Skills)</h2>
+
+     <div class="soft-skills-grid">
+       <!-- Autonomie & Proactivité -->
+       <div class="soft-skill-card" style="--skill-color: #3b82f6;">
+         <div class="card-header">
+           <i class="fa-solid fa-rocket"></i>
+           <h4>Autonomie</h4>
+         </div>
+         <p class="card-situation">🚀 Contexte client flou ? Je documente ma compréhension, je propose une approche, je valide avec le PO. Je m'auto-gère sans attendre.</p>
+         <span class="card-badge">Proactivité</span>
+       </div>
+
+       <!-- Curiosité & Exploration -->
+       <div class="soft-skill-card" style="--skill-color: #f59e0b;">
+         <div class="card-header">
+           <i class="fa-solid fa-magnifying-glass"></i>
+           <h4>Curiosité</h4>
+         </div>
+         <p class="card-situation">🔎 "Pourquoi ça marche comme ça ?" — Je creuse les problèmes, lis la doc, teste les hypothèses. J'aime comprendre, pas juste faire.</p>
+         <span class="card-badge">Apprentissage</span>
+       </div>
+
+       <!-- Résolution de Problèmes -->
+       <div class="soft-skill-card" style="--skill-color: #06b6d4;">
+         <div class="card-header">
+           <i class="fa-solid fa-lightbulb"></i>
+           <h4>Esprit Critique</h4>
+         </div>
+         <p class="card-situation">🔍 Bug → j'analyse la vraie cause, je teste ma fix localement, je documente ce que j'ai appris pour éviter le prochain.</p>
+         <span class="card-badge">Rigueur</span>
+       </div>
+
+       <!-- Communication Claire -->
+       <div class="soft-skill-card" style="--skill-color: #10b981;">
+         <div class="card-header">
+           <i class="fa-solid fa-comments"></i>
+           <h4>Communication</h4>
+         </div>
+         <p class="card-situation">📢 Démos client claires, retraits en français et anglais fluides, rapports de sprint structurés avec impact mesurable.</p>
+         <span class="card-badge">Clarté</span>
+       </div>
+
+       <!-- Travail d'Équipe -->
+       <div class="soft-skill-card" style="--skill-color: #8b5cf6;">
+         <div class="card-header">
+           <i class="fa-solid fa-handshake"></i>
+           <h4>Collaboration</h4>
+         </div>
+         <p class="card-situation">👥 Collègue bloqué = opportunité de pair-prog. Feedback constructif, code reviews bienveillantes, on grandit ensemble.</p>
+         <span class="card-badge">Entraide</span>
+       </div>
+
+       <!-- Responsabilité & Fiabilité -->
+       <div class="soft-skill-card" style="--skill-color: #ec4899;">
+         <div class="card-header">
+           <i class="fa-solid fa-check-circle"></i>
+           <h4>Responsabilité</h4>
+         </div>
+         <p class="card-situation">✓ Deadline serré ? Je fais scaler up 48h avant, j'implique le PO. Les erreurs ne me paralysent pas, je pivote vite.</p>
+         <span class="card-badge">Fiabilité</span>
+       </div>
+     </div>
+  </section>
+
+  <!-- 5️⃣ ANALYSE RÉFLEXIVE : CONNAISSANCE ET CONSCIENCE DE SOI -->
+  <section id="auto-analyse" class="card section-primary">
+    <h2>Analyse Réflexive & Auto-Connaissance</h2>
+
+    <div class="analysis-grid">
+      <!-- Découvertes -->
+      <div class="analysis-card">
+        <div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <h3>Ce que j'ai découvert</h3>
+        <ul>
+          <li>J'aime l'autonomie</li>
+          <li>J'ai besoin de sens dans mon travail</li>
+          <li>Je suis créatif face aux problèmes</li>
+          <li>L'interaction humaine m'énergise</li>
         </ul>
       </div>
 
-      <p class="sr-only" aria-live="polite" id="hard-skills-status"></p>
+      <!-- Points forts -->
+      <div class="analysis-card">
+        <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+        <h3>Mes points forts</h3>
+        <ul>
+          <li>Apprentissage rapide</li>
+          <li>Proactivité & Responsabilité</li>
+          <li>Communication claire</li>
+          <li>Empathie utilisateur</li>
+        </ul>
+      </div>
+
+      <!-- Axes progrès -->
+      <div class="analysis-card">
+        <div class="card-icon"><i class="fa-solid fa-arrow-up"></i></div>
+        <h3>Mes axes de progrès</h3>
+        <ul>
+          <li>Délégation</li>
+          <li>Prise de recul big picture</li>
+          <li>Aisance avec l'incertitude</li>
+          <li>Négociation</li>
+        </ul>
+      </div>
+
+      <!-- Besoins -->
+      <div class="analysis-card">
+        <div class="card-icon"><i class="fa-solid fa-handshake"></i></div>
+        <h3>Pour continuer à évoluer</h3>
+        <ul>
+          <li>Mentorat structuré</li>
+          <li>Diversité technologique</li>
+          <li>Contexte produit complet</li>
+          <li>Feedback régulier</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section id="soft-skills" class="card">
-    <h2>Soft Skills</h2>
-    <ul class="soft-grid">
-      <li><img src="assets/curiosity-person-people-emotion-svgrepo-com.svg" alt="Curiosité"><i class="fa-solid fa-users"></i> Curiosité</li>
-      <li><img src="assets/hands-shaking-svgrepo-com.svg" alt="Esprit d'équipe"><i class="fa-solid fa-comments"></i> Esprit d'équipe</li>
-      <li><img src="assets/creativity-visualize-visual-imagine-svgrepo-com.svg" alt="Créativité"><i class="fa-solid fa-bolt"></i> Créativité</li>
-      <li><img src="assets/communication-3-svgrepo-com.svg" alt="Communication"><i class="fa-solid fa-lightbulb"></i> Communication</li>
-    </ul>
+  <!-- Projets académiques (contexte secondary) -->
+  <section id="projets" class="card">
+    <h2>Projets Académiques</h2>
+    <p class="section-intro">Projets collectifs menés dans le cadre du BUT — mettant en pratique hard et soft skills.</p>
+
+    <div class="projects-grid">
+      <article class="project">
+        <div class="project-badge">Stage Erasmus</div>
+        <h3>Application de Maintenance</h3>
+        <p>Développement mobile complet avec Flutter et Kotlin.</p>
+        <div class="project-highlight">
+          <strong>Impact :</strong> App en production, RTU immédiate, 3 mois
+        </div>
+        <div class="chips">
+          <span class="chip">Flutter</span>
+          <span class="chip">Kotlin</span>
+          <span class="chip">API REST</span>
+        </div>
+        <div class="actions">
+          <a class="btn small" href="projects/erasmus.html" rel="noopener">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Découvrir
+          </a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-badge">Semestre 6</div>
+        <h3>CHEQA - Semaine Agile</h3>
+        <p>Réseau social de fact-checking — Spring et React.</p>
+        <div class="project-highlight">
+          <strong>Apprentissage :</strong> Méthodologie agile, relation client, travail d'équipe
+        </div>
+        <div class="chips">
+          <span class="chip">Spring</span>
+          <span class="chip">React</span>
+          <span class="chip">Agilité</span>
+        </div>
+        <div class="actions">
+          <a class="btn small" href="projects/cheqa.html" rel="noopener">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Découvrir
+          </a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-badge">Semestre 5</div>
+        <h3>Site de réservation</h3>
+        <p>Création d'un site de réservation de créneaux — Java/Springboot.</p>
+        <div class="project-highlight">
+          <strong>Focus :</strong> Conception orientée objet, gestion de projet, travail en duo
+        </div>
+        <div class="chips">
+          <span class="chip">Java</span>
+          <span class="chip">Springboot</span>
+          <span class="chip">SQL</span>
+        </div>
+        <div class="actions">
+          <a class="btn small" href="projects/reservation.html" rel="noopener">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Découvrir
+          </a>
+        </div>
+      </article>
+    </div>
   </section>
 
+  <!-- Formations -->
   <section id="formations" class="card">
     <h2>Formations</h2>
     <ol class="timeline">
       <li>
+        <div class="time">2026 - Maintenance</div>
+        <div class="content">
+          <h3>Admissible IMT Nord Europe - Informatique, Telecommunication et Réseau</h3>
+        </div>
+      </li>
+      <li>
         <div class="time">2023 - 2026</div>
         <div class="content">
           <h3>BUT Informatique - Parcours A</h3>
-          <p>Cours clés : Java/JEE, SQL, C, Communication</p>
+          <p>Technologie : Java/JEE, SQL, C, Web (HTML/CSS/JS). Communication et soft skills valorisés depuis S3.</p>
         </div>
       </li>
       <li>
         <div class="time">2022 - 2023</div>
         <div class="content">
-          <h3>EFREI Paris</h3>
-          <p>Cours clés : Mathématiques avancées, Python, C.</p>
+          <h3>EFREI Paris (année de transition)</h3>
+          <p>Mathématiques avancées, Python, C. Transition vers le BUT.</p>
         </div>
       </li>
       <li>
         <div class="time">2019 — 2022</div>
         <div class="content">
           <h3>BAC NSI/Physique — Lycée Jacques Prévert, Longjumeau</h3>
+          <p>Fondations en informatique (algorithmes, POO basics) et sciences.</p>
         </div>
       </li>
     </ol>
   </section>
 
-  <section id="experiences" class="card">
-    <h2>Expériences</h2>
-    <ol class="timeline">
-      <li>
-        <div class="time">2025 — 3 mois</div>
-        <div class="content">
-          <h3>Stage Erasmus — ISEC Coimbra</h3>
-          <ul>
-            <li>Développement d'une application de suivi de maintenance en Flutter et Kotlin.</li>
-            <li>Intégration API REST et authentification.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">Flutter</span><span class="chip">Kotlin</span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="time">2023 — 1 mois</div>
-        <div class="content">
-          <h3>Stage ouvrier — Solution corde</h3>
-          <ul>
-            <li>Installation de bâches publicitaires et événementielles (Opéra de Paris, Red Bull Cliff Diving challenge).</li>
-            <li>Gestion de la circulation.</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="time">2023 — 1 mois</div>
-        <div class="content">
-          <h3>Bénévolat — Refuge de chat, Villejuif</h3>
-          <ul>
-            <li>Création d'outils de recensement des animaux ainsi que des matériels à disposition.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">Excel</span>
-          </div>
-        </div>
-      </li>
-    </ol>
-  </section>
-
-  <section id="projets" class="card">
-    <h2>Projets</h2>
-    <div class="projects-grid">
-      <article class="project">
-        <h3>Projet Erasmus</h3>
-        <p>Application de maintenance permettant de suivre les tâches assignées et à mettre à jour celles-ci.</p>
-        <div class="chips">
-          <span class="chip">Flutter</span><span class="chip">Kotlin</span>
-        </div>
-        <div class="actions">
-          <a class="btn small" href="projects/erasmus.html" rel="noopener">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le projet
-          </a>
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>Projet réseau social S4</h3>
-        <p>Développement d'une application de messagerie mobile.</p>
-        <div class="chips">
-          <span class="chip">Java</span><span class="chip">JEE</span><span class="chip">SQL</span>
-        </div>
-        <div class="actions">
-          <a class="btn small" href="projects/reseau-social-s4.html" rel="noopener">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le projet
-          </a>
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>Projet classification S3</h3>
-        <p>Classification de jeu de données grâce à un algorithme KNN.</p>
-        <div class="chips">
-          <span class="chip">Java</span><span class="chip">JavaFX</span>
-        </div>
-        <div class="actions">
-          <a class="btn small" href="projects/knn-s3.html" rel="noopener">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le projet
-          </a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="loisirs" class="card">
-    <h2>Loisirs</h2>
-    <ul class="soft-grid">
-      <li><img src="assets/climbing-silhouette-svgrepo-com.svg" alt="Escalade"><i class="fa-solid fa-camera"></i> Escalade</li>
-      <li><img src="assets/console-game-svgrepo-com.svg" alt="Jeux-video"><i class="fa-solid fa-dumbbell"></i> Jeux-vidéos</li>
-      <li><img src="assets/music-svgrepo-com.svg" alt="Musique"><i class="fa-solid fa-globe"></i> Musique</li>
-      <li><img src="assets/cooking-book-svgrepo-com.svg" alt="Cuisine"><i class="fa-solid fa-book"></i> Cuisine</li>
-    </ul>
-  </section>
-
+  <!-- Contact -->
   <section id="contact" class="card">
     <h2>Contact</h2>
 
@@ -293,10 +545,13 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>© <span id="year"></span>Yvan Serikoff — CV numérique.</p>
+    <p>© <span id="year"></span> Yvan Serikoff — Portfolio</p>
   </div>
 </footer>
 
 <script defer src="js/hard-skills-carousel.js"></script>
+<script defer src="js/soft-skills-tabs.js"></script>
+<script defer src="js/timeline-interactions.js"></script>
 </body>
 </html>
+

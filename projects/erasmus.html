@@ -5,22 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projet Erasmus — Démonstration</title>
   <meta name="description" content="Démonstration vidéo et description du projet Erasmus." />
+  <meta name="theme-color" content="#2563eb" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/projet.css" />
+  <script defer src="https://kit.fontawesome.com/a2d9a9b1a1.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="../index.html#a-propos" aria-label="Aller à la section À propos">
+    <a class="brand" href="../index.html#positionnement" aria-label="Aller à la section Présentation">
       <div>
         <h1 class="name">Yvan Serikoff</h1>
-        <p class="tagline">Étudiant en informatique • Recherche Stage</p>
+        <p class="tagline">Développeur • Apprenant continu • En recherche d'une alternance</p>
       </div>
     </a>
     <nav class="site-nav" aria-label="Navigation principale">
       <ul id="menu" class="nav-list">
-        <li><a href="../index.html#projets">Retour aux projets</a></li>
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -28,10 +31,16 @@
 
 <main class="container">
   <article class="card project-wrap">
-    <a class="back-link" href="../index.html#projets">← Retour</a>
+    <a class="back-link" href="../index.html#projets">← Retour aux projets</a>
 
     <header class="project-hero">
+      <div class="project-meta" aria-label="Métadonnées du projet">
+        <span class="project-chip">Semestre 5</span>
+        <span class="project-chip">Flutter</span>
+        <span class="project-chip">Kotlin</span>
+      </div>
       <h1>Projet Erasmus</h1>
+      <p class="project-summary">Une application mobile conçue en équipe pendant un stage à Coimbra, avec un vrai contexte client, des retours réguliers et des responsabilités techniques concrètes.</p>
       <div class="video-frame" role="region" aria-label="Vidéo de démonstration">
         <!-- Option 1: vidéo locale -->
         <video controls preload="metadata" poster="../assets/videos/video-placeholder%20(1).png">
@@ -50,7 +59,7 @@
       <p>Côté mobile : Flutter pour l’UI multi-plateformes. Côté Android natif : modules spécifiques en Kotlin pour les fonctionnalités de réalité augmentée.</p>
 
       <div class="project-actions">
-        <a class="btn" href="https://github.com/YvanSerikoff/maintenance-tracker-app" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Github</a>
+        <a class="btn primary" href="https://github.com/YvanSerikoff/maintenance-tracker-app" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>
     </section>
   </article>
@@ -58,7 +67,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>© <span id="year"></span> Yvan Serikoff — CV numérique.</p>
+    <p>© <span id="year" ></span>  Yvan Serikoff — CV numérique.</p>
   </div>
 </footer>
 

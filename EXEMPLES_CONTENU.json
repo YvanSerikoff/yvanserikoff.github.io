@@ -1,0 +1,316 @@
+{
+  "portfolio": {
+    "version": "2.0-refactored",
+    "date": "2026-04-13",
+    "sections": {
+      "positionnement": {
+        "title": "Positionnement Professionnel",
+        "template": {
+          "evolution": "Après mon expérience du Semestre 4 (projet réseau social), j'ai développé une compréhension solide de...",
+          "domaine_vise": [
+            "Applications modernes et responsives (web et mobile)",
+            "Qualité et bonnes pratiques",
+            "Collaboration et apprentissage continu"
+          ],
+          "projet_court_terme": "Je recherche un stage ou une alternance (6-12 mois) dans une entreprise tech valorisant..."
+        }
+      },
+      "experiences": {
+        "title": "Expériences Professionnelles",
+        "items": [
+          {
+            "titre": "Stage Erasmus — ISEC Coimbra (Portugal)",
+            "date": "2025 — 3 mois",
+            "location": "Coimbra",
+            "onglets": {
+              "contexte": {
+                "question": "Décrivez l'entreprise, l'équipe, l'environnement",
+                "exemple": "ISEC est une école supérieure portugaise. Équipe : 1 PO + 2-3 développeurs. Méthodologie Agile, sprints 2 semaines."
+              },
+              "missions": {
+                "question": "Listez les tâches confiées de manière concrète",
+                "exemple": [
+                  "Développement application mobile (Flutter & Kotlin)",
+                  "Intégration API REST",
+                  "Système d'authentification"
+                ]
+              },
+              "autonomie": {
+                "question": "Décrivez votre autonomie et les interactions clés",
+                "exemple": {
+                  "autonomie": "Progression : Semaines 1-2 accompagnement, Semaines 3+ autonomie croissante",
+                  "interactions": {
+                    "equipe": "Code review, pair programming, réunions sync",
+                    "hierarchie": "PO : clarification stories, démos hebdomadaires",
+                    "utilisateurs": "Feedback via PO, itérations basées sur usage"
+                  }
+                }
+              },
+              "apprentissages": {
+                "question": "Listez 3-5 apprentissages clés",
+                "exemple": [
+                  "Développement mobile cross-platform",
+                  "Travail en équipe distribuée",
+                  "Agilité pragmatique"
+                ]
+              }
+            },
+            "technologies": ["Flutter", "Kotlin", "API REST"]
+          }
+        ]
+      },
+      "hard_skills": {
+        "title": "Compétences Techniques",
+        "categories": {
+          "langages": {
+            "template": {
+              "nom": "[Nom du langage]",
+              "niveau": "Expert | Avancé | Intermédiaire | Débutant",
+              "contexte": "Utilisé dans [projet/stage]",
+              "savoir_faire": "Capable de [action concrète]",
+              "projets": "[Nom des projets]"
+            },
+            "examples": [
+              {
+                "nom": "Java / Java EE",
+                "niveau": "Expert",
+                "contexte": "Projet réseau social (S4), API REST (Erasmus)",
+                "savoir_faire": "POO avancée, servlets, JPA/Hibernate, gestion des transactions",
+                "projets": "Application de messagerie, backend mobile"
+              },
+              {
+                "nom": "Flutter (Dart)",
+                "niveau": "Avancé",
+                "contexte": "Stage Erasmus, développement mobile cross-platform",
+                "savoir_faire": "Widgets, state management, intégration API, authentification",
+                "projets": "Application de maintenance ISEC"
+              }
+            ]
+          },
+          "bases_donnees": {
+            "template": {
+              "nom": "[Nom BDD/ORM]",
+              "niveau": "Expert | Avancé | Intermédiaire | Débutant",
+              "contexte": "[Contexte]",
+              "savoir_faire": "[Ce que vous savez faire]"
+            }
+          },
+          "outils": {
+            "template": {
+              "nom": "[Nom outil/méthodologie]",
+              "niveau": "Expert | Avancé | Intermédiaire | Débutant",
+              "contexte": "[Contexte]",
+              "savoir_faire": "[Capacités]"
+            }
+          }
+        }
+      },
+      "soft_skills": {
+        "title": "Compétences Comportementales",
+        "categories": {
+          "maniere_etre": {
+            "title": "Manière d'Être",
+            "items": [
+              {
+                "nom": "Posture professionnelle & Responsabilité",
+                "definition": "Capacité à se tenir à ses engagements, à anticiper les problèmes et à agir de manière structurée.",
+                "situation_concrète": "[Anecdote de 2-3 phrases montrant cette compétence]",
+                "apprentissage": "[Ce que ça vous a appris]",
+                "preuve": "[Résultat, feedback, impact mesurable]"
+              },
+              {
+                "nom": "Gestion du stress & Émotions",
+                "definition": "Capacité à rester lucide et productif face aux imprévus ou délais serrés.",
+                "situation_concrète": "[Anecdote]",
+                "apprentissage": "[Apprentissage]",
+                "preuve": "[Preuve]"
+              },
+              {
+                "nom": "Adaptabilité & Apprentissage continu",
+                "definition": "Capacité à apprendre rapidement de nouvelles compétences et à s'adapter aux changements.",
+                "situation_concrète": "[Anecdote]",
+                "apprentissage": "[Apprentissage]",
+                "preuve": "[Preuve]"
+              },
+              {
+                "nom": "Engagement & Sens des responsabilités",
+                "definition": "Investissement émotionnel et intellectuel dans les tâches.",
+                "situation_concrète": "[Anecdote]",
+                "apprentissage": "[Apprentissage]",
+                "preuve": "[Preuve]"
+              },
+              {
+                "nom": "Confiance en soi",
+                "definition": "Capacité à proposer des idées sans peur du jugement.",
+                "situation_concrète": "[Anecdote]",
+                "apprentissage": "[Apprentissage]",
+                "preuve": "[Preuve]"
+              }
+            ]
+          },
+          "maniere_communiquer": {
+            "title": "Manière de Communiquer",
+            "items": [
+              {
+                "nom": "Communication orale & écrite professionnelle",
+                "definition": "Capacité à transmettre des informations claires, structurées et adaptées au contexte.",
+                "situation_orale": "[Exemple de communication orale]",
+                "situation_ecrite": "[Exemple de communication écrite]",
+                "preuve": "[Preuve]"
+              },
+              {
+                "nom": "Écoute active & Reformulation",
+                "definition": "Capacité à comprendre les besoins implicites, à poser des questions pertinentes.",
+                "situation_concrète": "[Anecdote]",
+                "apprentissage": "[Apprentissage]",
+                "preuve": "[Preuve]"
+              },
+              {
+                "nom": "Assertivité",
+                "definition": "Capacité à exprimer un désaccord respectueusement et à défendre ses positions.",
+                "situation_concrète": "[Anecdote]",
+                "apprentissage": "[Apprentissage]",
+                "preuve": "[Preuve]"
+              },
+              {
+                "nom": "Réception des feedbacks & Adaptation",
+                "definition": "Capacité à recevoir les critiques sans défensive et à en tirer profit.",
+                "situation_concrète": "[Anecdote]",
+                "apprentissage": "[Apprentissage]",
+                "preuve": "[Preuve]"
+              }
+            ]
+          },
+          "maniere_travailler_autres": {
+            "title": "Manière de Travailler avec les Autres",
+            "items": [
+              {
+                "nom": "Travail d'équipe & Coopération",
+                "definition": "Capacité à collaborer, à partager ses apprentissages, à soutenir les autres.",
+                "situation_concrète": "[Anecdote]",
+                "apprentissage": "[Apprentissage]",
+                "preuve": "[Preuve]"
+              },
+              {
+                "nom": "Gestion des désaccords & Tensions",
+                "definition": "Capacité à transformer les conflits en opportunités d'apprentissage.",
+                "situation_concrète": "[Anecdote]",
+                "apprentissage": "[Apprentissage]",
+                "preuve": "[Preuve]"
+              },
+              {
+                "nom": "Positionnement dans un collectif",
+                "definition": "Capacité à trouver sa place, ni trop dominant ni effacé.",
+                "situation_concrète": "[Anecdote]",
+                "apprentissage": "[Apprentissage]",
+                "preuve": "[Preuve]"
+              },
+              {
+                "nom": "Prise d'initiative & Influence positive",
+                "definition": "Capacité à identifier des améliorations et à les proposer.",
+                "situation_initiative": "[Exemple d'initiative]",
+                "situation_influence": "[Exemple d'influence positive]",
+                "preuve": "[Preuve]"
+              }
+            ]
+          }
+        }
+      },
+      "auto_analyse": {
+        "title": "Analyse Réflexive & Auto-Connaissance",
+        "blocs": {
+          "apprentissages": {
+            "titre": "Ce que j'ai appris sur moi-même",
+            "description": "Découvertes révélées par l'expérience professionnelle",
+            "items": [
+              "J'aime l'autonomie progressive",
+              "Je suis créatif dans la résolution de problèmes",
+              "L'interaction humaine est importante pour moi",
+              "J'ai besoin de sens",
+              "Je suis résiliente"
+            ]
+          },
+          "points_forts": {
+            "titre": "Mes points forts identifiés",
+            "description": "Qualités réelles observées en contexte professionnel",
+            "items": [
+              "Apprentissage rapide",
+              "Proactivité & Responsabilité",
+              "Communication claire",
+              "Empathie utilisateur",
+              "Persévérance",
+              "Qualité"
+            ]
+          },
+          "axes_progres": {
+            "titre": "Mes axes de progrès",
+            "description": "Honnêtement : qu'est-ce que vous devez améliorer ?",
+            "items": [
+              {
+                "axe": "Perfectionnisme",
+                "description": "Parfois je peaufine trop au lieu de livrer 'assez bon'"
+              },
+              {
+                "axe": "Délégation",
+                "description": "Tendance à tout faire moi-même au lieu de confier"
+              },
+              {
+                "axe": "Prise de recul",
+                "description": "Absorbé par les détails, j'oublie la 'big picture'"
+              },
+              {
+                "axe": "Aisance avec l'incertitude",
+                "description": "J'aime les specs claires, difficile d'avancer avec du flou"
+              }
+            ]
+          },
+          "besoins": {
+            "titre": "Besoins pour continuer à évoluer",
+            "description": "Pour votre prochain stage/alternance",
+            "items": [
+              "Mentorat structuré",
+              "Diversité technologique",
+              "Contexte produit complet",
+              "Autonomie progressive",
+              "Feedback régulier",
+              "Environnement collaboratif"
+            ]
+          },
+          "culture_entreprise": {
+            "titre": "Ce que je cherche dans une entreprise",
+            "description": "Au-delà de la tech",
+            "items": [
+              "Culture d'apprentissage",
+              "Inclusion & Bienveillance",
+              "Impact mesurable",
+              "Responsabilité progressive",
+              "Transparence"
+            ]
+          }
+        }
+      }
+    },
+    "recommandations": {
+      "contenu": [
+        "Soyez SPÉCIFIQUE : noms de projets, détails concrets",
+        "Montrez le CONTEXTE RÉEL : équipe, environnement, défis",
+        "Cherchez les PREUVES : résultats, feedbacks, impacts",
+        "Soyez HONNÊTE : points forts ET axes de progrès",
+        "Reflétez votre APPRENTISSAGE : ce que ça vous a appris"
+      ],
+      "style": [
+        "Soyez PERSONNEL : ce sont VOS découvertes",
+        "Soyez CONCIS : 200-300 mots par section max",
+        "Soyez PROFESSIONNEL : langage clair, pas de familiarités",
+        "Soyez HUMBLE : perfectionnisme ≠ crédibilité"
+      ],
+      "timing": {
+        "immediate": "Lire GUIDE + CHECKLIST (30 min)",
+        "court_terme": "Remplir Positionnement + Expériences (4-6h)",
+        "moyen_terme": "Remplir Hard/Soft Skills + Auto-analyse (6-8h)",
+        "avant_presentation": "QA + Proofreading (1-2h)"
+      }
+    }
+  }
+}
+
